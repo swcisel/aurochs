@@ -1,0 +1,1837 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "name": "app/App.js",
+    "content": "\nimport React, { Component } from 'react';\nimport {\n\tAppRegistry,\n\tStyleSheet,\n\tView,\n\tText\n} from 'react-native';\nimport { Provider } from 'react-redux';\nimport createStore from './reducers';\nimport Main from './containers/main/Main';\nimport Other from './containers/other/Other';\nconst store = createStore();\n\n/**\n * @todo write an app\n */\nexport default class aurochs extends Component {\n\t/**\n\t * @returns {XML}\n\t */\n\trender() {\n\t\tconsole.log('STORE', store);\n\t\treturn (\n\t\t\t<Provider store={store}>\n\t\t\t\t<View style={{flex: 1}}>\n\t\t\t\t\t<Main></Main>\n\t\t\t\t\t<Other></Other>\n\t\t\t\t</View>\n\t\t\t</Provider>\n\t\t);\n\t}\n}\n\n/**\n * @const styles\n */\nconst styles = StyleSheet.create({\n\tcontainer: {\n\t\tflex: 1,\n\t\tjustifyContent: 'center',\n\t\talignItems: 'center',\n\t\tbackgroundColor: '#F5FCFF',\n\t},\n\twelcome: {\n\t\tfontSize: 20,\n\t\ttextAlign: 'center',\n\t\tmargin: 10,\n\t},\n\tinstructions: {\n\t\ttextAlign: 'center',\n\t\tcolor: '#333333',\n\t\tmarginBottom: 5,\n\t},\n});",
+    "static": true,
+    "longname": "app/App.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 1,
+    "kind": "variable",
+    "name": "store",
+    "memberof": "app/App.js",
+    "static": true,
+    "longname": "app/App.js~store",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/App.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 2,
+    "kind": "class",
+    "name": "aurochs",
+    "memberof": "app/App.js",
+    "static": true,
+    "longname": "app/App.js~aurochs",
+    "access": null,
+    "export": true,
+    "importPath": "aurochs/app/App.js",
+    "importStyle": "aurochs",
+    "description": "",
+    "lineNumber": 18,
+    "todo": [
+      "write an app"
+    ],
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 3,
+    "kind": "method",
+    "name": "render",
+    "memberof": "app/App.js~aurochs",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/App.js~aurochs#render",
+    "access": null,
+    "description": "",
+    "lineNumber": 22,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{XML}"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "XML"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "variable",
+    "name": "styles",
+    "memberof": "app/App.js",
+    "static": true,
+    "longname": "app/App.js~styles",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/App.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 38,
+    "unknown": [
+      {
+        "tagName": "@const",
+        "tagValue": "styles"
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 5,
+    "kind": "file",
+    "name": "app/actions/index.js",
+    "content": "export const INCREMENT_AGE = 'INCREMENT_AGE';\n\nexport function incrementAge(age) {\n\t\"use strict\";\n\tage++;\n\tconsole.log('arguments');\n\treturn {type: INCREMENT_AGE, age};\n}",
+    "static": true,
+    "longname": "app/actions/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 6,
+    "kind": "variable",
+    "name": "INCREMENT_AGE",
+    "memberof": "app/actions/index.js",
+    "static": true,
+    "longname": "app/actions/index.js~INCREMENT_AGE",
+    "access": null,
+    "export": true,
+    "importPath": "aurochs/app/actions/index.js",
+    "importStyle": "{INCREMENT_AGE}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 7,
+    "kind": "function",
+    "name": "incrementAge",
+    "memberof": "app/actions/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "app/actions/index.js~incrementAge",
+    "access": null,
+    "export": true,
+    "importPath": "aurochs/app/actions/index.js",
+    "importStyle": "{incrementAge}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "age",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"type\": *, \"age\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "file",
+    "name": "app/components/button/Button.js",
+    "content": "/** @flow */\n'use strict';\n\nimport React, { Component, PropTypes, cloneElement} from 'react'\nimport { connect } from 'react-redux'\nimport styles from './Style'\nimport LinearGradient from 'react-native-linear-gradient';\nimport {\n\tView,\n\tTouchableHighlight,\n\tText\n} from 'react-native'\n\nclass Button extends Component {\n\tstatic propTypes = {\n\t\t...TouchableHighlight.propTypes,\n\t\tallowFontScaling: Text.propTypes.allowFontScaling,\n\t\tcontainerStyle: View.propTypes.style,\n\t\tdisabled: PropTypes.bool,\n\t\tstyle: Text.propTypes.style,\n\t\tstyleDisabled: Text.propTypes.style\n\t}\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tconsole.log('blah', this, styles.button.padding);\n\t\tthis.k = this.props.children;\n\t}\n\n\trender() {\n\t\treturn (\n\t\t\t<View style={styles.view}>\n\t\t\t\t{this.k}\n\t\t\t\t<LinearGradient colors={['#FDD', '#FCC']} start={{x:.4, y:.1}} style={styles.linearGradient}>\n\t\t\t\t\t<TouchableHighlight\n\t\t\t\t\t\tstyle={styles.button}\n\t\t\t\t\t\tonPress={this.props.onPress}\n\t\t\t\t\t\tunderlayColor=\"#FCC\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<Text style={styles.label}>{this.props.label.toUpperCase()}</Text>\n\t\t\t\t\t</TouchableHighlight>\n\t\t\t\t</LinearGradient>\n\t\t\t</View>\n\t\t)\n\t}\n}\n\nconst mapStateToProps = (state) => {\n\treturn (state);\n}\n\nexport default connect(mapStateToProps)(Button);",
+    "static": true,
+    "longname": "app/components/button/Button.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 9,
+    "kind": "class",
+    "name": "Button",
+    "memberof": "app/components/button/Button.js",
+    "static": true,
+    "longname": "app/components/button/Button.js~Button",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/components/button/Button.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 10,
+    "kind": "member",
+    "name": "propTypes",
+    "memberof": "app/components/button/Button.js~Button",
+    "static": true,
+    "longname": "app/components/button/Button.js~Button.propTypes",
+    "access": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "{...undefined: Object, \"allowFontScaling\": *, \"containerStyle\": *, \"disabled\": *, \"style\": *, \"styleDisabled\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 11,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "app/components/button/Button.js~Button",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/components/button/Button.js~Button#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 23,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "props",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 12,
+    "kind": "member",
+    "name": "k",
+    "memberof": "app/components/button/Button.js~Button",
+    "static": false,
+    "longname": "app/components/button/Button.js~Button#k",
+    "access": null,
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "method",
+    "name": "render",
+    "memberof": "app/components/button/Button.js~Button",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/components/button/Button.js~Button#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 29,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 14,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "app/components/button/Button.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "app/components/button/Button.js~mapStateToProps",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/components/button/Button.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 47,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 15,
+    "kind": "file",
+    "name": "app/components/button/Style.js",
+    "content": "import React from 'react';\nimport { StyleSheet} from 'react-native';\n\nexport default StyleSheet.create({\n\tlabel: {\n\t\tcolor: '#CA90F0',\n\t\tfontWeight: 'bold',\n\t\tfontSize: 20,\n\t\ttextAlign: 'center',\n\t},\n\tbutton: {\n\t\tjustifyContent: 'center',\n\t\tborderWidth: 2,\n\t\tborderColor: 'pink',\n\t\talignItems: 'center',\n\t\tborderRadius: 5,\n\t\tpadding: 20\n\t},\n\tlinearGradient: {\n\t\tborderRadius: 5\n\t}\n})",
+    "static": true,
+    "longname": "app/components/button/Style.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 16,
+    "kind": "file",
+    "name": "app/components/button/index.js",
+    "content": "// @flow\n'use strict';\n\nimport Button from './Button'\nexport default Button;",
+    "static": true,
+    "longname": "app/components/button/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 17,
+    "kind": "file",
+    "name": "app/components/draggable/Draggable..js",
+    "content": "/** @flow */\n'use strict';\n\nimport React,{\n\tComponent,\n\tStyleSheet,\n\tView,\n\tText,\n\tPanResponder,\n\tAnimated,\n\tDimensions\n} from 'react-native';\nimport { connect } from 'react-redux'\nimport styles from './Styles'\nclass Draggable extends Component {\n\tconstructor(props) {\n\t\tsuper(props);\n\t}\n\n\trender() {\n\t\treturn (\n\t\t\t<View style={styles.view}>\n\t\t\t\t<Animated.View>\n\t\t\t\t\t<Text style={styles.label}>HI</Text>\n\t\t\t\t</Animated.View>\n\t\t\t</View>\n\t\t)\n\t}\n}\n\nconst mapStateToProps = (state) => {\n\treturn (state);\n}\n\nexport default connect(mapStateToProps)(Draggable)",
+    "static": true,
+    "longname": "app/components/draggable/Draggable..js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 18,
+    "kind": "class",
+    "name": "Draggable",
+    "memberof": "app/components/draggable/Draggable..js",
+    "static": true,
+    "longname": "app/components/draggable/Draggable..js~Draggable",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/components/draggable/Draggable..js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "react-native~Component"
+    ]
+  },
+  {
+    "__docId__": 19,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "app/components/draggable/Draggable..js~Draggable",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/components/draggable/Draggable..js~Draggable#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "props",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 20,
+    "kind": "method",
+    "name": "render",
+    "memberof": "app/components/draggable/Draggable..js~Draggable",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/components/draggable/Draggable..js~Draggable#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 21,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "app/components/draggable/Draggable..js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "app/components/draggable/Draggable..js~mapStateToProps",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/components/draggable/Draggable..js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 31,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 22,
+    "kind": "file",
+    "name": "app/components/draggable/Style.js",
+    "content": "import React from 'react';\nimport { StyleSheet} from 'react-native';\n\nexport default StyleSheet.create({\n\tview: {\n\t\tbackgroundColor: 'red',\n\t\tflex: 1\n\t},\n\tlabel: {\n\t\tcolor: '#CA90F0',\n\t\tfontWeight: 'bold',\n\t\tfontSize: 20,\n\t\ttextAlign: 'center',\n\t},\n\tbutton: {\n\t\tjustifyContent: 'center',\n\t\tborderWidth: 2,\n\t\tborderColor: 'pink',\n\t\talignItems: 'center',\n\t\tborderRadius: 5,\n\t\tpadding: 20\n\t},\n\tlinearGradient: {\n\t\tborderRadius: 5\n\t}\n})",
+    "static": true,
+    "longname": "app/components/draggable/Style.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 23,
+    "kind": "file",
+    "name": "app/components/draggable/index.js",
+    "content": "// @flow\n'use strict';\n\nimport Draggable from './Draggable'\nexport default Draggable;",
+    "static": true,
+    "longname": "app/components/draggable/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 24,
+    "kind": "file",
+    "name": "app/config/store.js",
+    "content": "import { createStore } from 'redux'\n\nconst initialState = {\n\ttext: 'hithere'\n}\n\nexport default (rootReducer) => {\n\t\"use strict\";\n\tconst store = createStore(rootReducer);\n\n\treturn store;\n};",
+    "static": true,
+    "longname": "app/config/store.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 25,
+    "kind": "variable",
+    "name": "initialState",
+    "memberof": "app/config/store.js",
+    "static": true,
+    "longname": "app/config/store.js~initialState",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/config/store.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "{\"text\": string}"
+      ]
+    }
+  },
+  {
+    "__docId__": 26,
+    "kind": "function",
+    "name": "store",
+    "memberof": "app/config/store.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "app/config/store.js~store",
+    "access": null,
+    "export": true,
+    "importPath": "aurochs/app/config/store.js",
+    "importStyle": "store",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "rootReducer",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 27,
+    "kind": "file",
+    "name": "app/containers/main/Main.js",
+    "content": "/**\n * @flow\n */\n'use strict';\n\nimport React, { Component } from 'react';\nimport { connect } from 'react-redux';\nimport {\n\tText,\n\tView,\n\tAnimated,\n} from 'react-native';\nimport Button from 'aurochs/app/components/button';\n// import Draggable from 'aurochs/app/components/draggable';\nimport styles from './Style';\n/**\n * Main class\n */\nclass Main extends Component {\n\t/**\n\t * The main view for the app\n\t * @param props\n\t * @param me\n\t * @param store\n\t */\n\tconstructor(props, me, store) {\n\t\tsuper(props);\n\t\tthis.food = () => {\n\t\t\tconsole.log('food');\n\t\t\tconst age = this.props.age;\n\t\t\tthis.props.dispatch({type: 'INCREMENT_AGE', age});\n\t\t}\n\t\tprops.dispatch({type: 'INCREMENT_AGE', age: 20});\n\t}\n\trender () {\n\t\tconst growstyle = () => {\n\t\t\tconst a = this.props.age;\n\t\t\tconst b = (\"#\" + ('000000' + this.props.counter.toString(16)).substr(-6, 6)).toString();\n\t\t\treturn {\n\t\t\t\theight: a,\n\t\t\t\twidth: a,\n\t\t\t\tborderRadius: a,\n\t\t\t\tbackgroundColor: b\n\t\t\t}\n\t\t}\n\t\treturn (\n\t\t\t<View style={styles.view}>\n\t\t\t\t<View style={growstyle()}></View>\n\t\t\t\t<Animated.View style={{width: 40, height: 40, backgroundColor: 'red'}}></Animated.View>\n\t\t\t\t<Text style={{fontSize: 20}}>{(\"#\" + ('000000' + this.props.counter.toString(16)).substr(-6, 6)).toString()}</Text>\n\t\t\t\t<Text style={styles.text}>{Math.round(this.props.age)}</Text>\n\t\t\t\t<Text>{this.props.age}</Text>\n\t\t\t\t<Button label=\"hodang\" />\n\t\t\t\t<Button style={styles.button} onPress={() => this.food()} label=\"Hobob\" />\n\t\t\t</View>\n\t\t)\n\t}\n}\n\nconst mapStateToProps = (state) => {\n\t\"use strict\";\n\tconst {counter, timer, age, multiplier} = state.test;\n\treturn {\n\t\tcounter,\n\t\ttimer,\n\t\tage,\n\t\tmultiplier\n\t}\n}\nexport default connect(mapStateToProps)(Main)",
+    "static": true,
+    "longname": "app/containers/main/Main.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 28,
+    "kind": "class",
+    "name": "Main",
+    "memberof": "app/containers/main/Main.js",
+    "static": true,
+    "longname": "app/containers/main/Main.js~Main",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/containers/main/Main.js",
+    "importStyle": null,
+    "description": "Main class",
+    "lineNumber": 19,
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 29,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "app/containers/main/Main.js~Main",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/containers/main/Main.js~Main#constructor",
+    "access": null,
+    "description": "The main view for the app",
+    "lineNumber": 26,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "me",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "store",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 30,
+    "kind": "member",
+    "name": "food",
+    "memberof": "app/containers/main/Main.js~Main",
+    "static": false,
+    "longname": "app/containers/main/Main.js~Main#food",
+    "access": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 31,
+    "kind": "method",
+    "name": "render",
+    "memberof": "app/containers/main/Main.js~Main",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/containers/main/Main.js~Main#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 35,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 32,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "app/containers/main/Main.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "app/containers/main/Main.js~mapStateToProps",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/containers/main/Main.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 60,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"counter\": *, \"timer\": *, \"age\": *, \"multiplier\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 33,
+    "kind": "file",
+    "name": "app/containers/main/Style.js",
+    "content": "import { StyleSheet} from 'react-native';\n\nexport default StyleSheet.create({\n\tview: {\n\t\tjustifyContent: 'space-around',\n\t\tbackgroundColor: '#FDDA99',\n\t//\tbackgroundColor: '#fad393',\n\t\talignItems: 'center',\n\t\tflexDirection: 'column',\n\t\tflex: 10\n\t},\n\ttext: {\n\t\tmargin: 10,\n\t\tfontSize: 60,\n\t\tcolor: '#6d6',\n\t\ttextAlign: 'center'\n\t},\n\tcircle: {\n\t\theight: 100,\n\t\twidth: 100,\n\t\tborderRadius: 100,\n\t\tbackgroundColor: 'red'\n\t}\n})",
+    "static": true,
+    "longname": "app/containers/main/Style.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 34,
+    "kind": "file",
+    "name": "app/containers/other/Other.js",
+    "content": "import React, { Component } from 'react';\nimport { connect } from 'react-redux';\nimport {\n\tText,\n\tView,\n\tTouchableHighlight\n} from 'react-native';\nimport styles from './Style'\n/**\n * @returns aoeu\n */\nclass Other extends Component {\n\tstate = {\n\t\ttimer: null,\n\t\tcounter: 0\n\t}\n\n\t/**\n\t *\n\t */\n\tcomponentWillMount() {\n\t\tlet timer = setInterval(this.tick, 1000);\n\t\tthis.setState({timer});\n\t}\n\tcomponentWillUnmount() {\n\t\tthis.clearInterval(this.state.timer);\n\t}\n\ttick = () => {\n\t\tthis.props.dispatch({type: 'INCREMENT_COUNTER'});\n\t}\n\trender () {\n\t\treturn (\n\t\t\t<View style={styles.view}>\n\t\t\t\t<Text style={styles.text}>Counter: {this.props.counter}</Text>\n\t\t\t</View>\n\t\t)\n\t}\n}\nconst mapStateToProps = (state) => {\n\t\"use strict\";\n\tconst {age, counter, timer, multiplier} = state.test;\n\treturn {\n\t\tcounter,\n\t\ttimer,\n\t\tage,\n\t\tmultiplier\n\t}\n}\nconst other = connect(mapStateToProps)(Other);\nexport default other;",
+    "static": true,
+    "longname": "app/containers/other/Other.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 35,
+    "kind": "class",
+    "name": "Other",
+    "memberof": "app/containers/other/Other.js",
+    "static": true,
+    "longname": "app/containers/other/Other.js~Other",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/containers/other/Other.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 12,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "aoeu"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "aoeu"
+    },
+    "interface": false,
+    "extends": [
+      "react~Component"
+    ]
+  },
+  {
+    "__docId__": 36,
+    "kind": "member",
+    "name": "state",
+    "memberof": "app/containers/other/Other.js~Other",
+    "static": false,
+    "longname": "app/containers/other/Other.js~Other#state",
+    "access": null,
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "{\"timer\": *, \"counter\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 37,
+    "kind": "method",
+    "name": "componentWillMount",
+    "memberof": "app/containers/other/Other.js~Other",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/containers/other/Other.js~Other#componentWillMount",
+    "access": null,
+    "description": "",
+    "lineNumber": 21,
+    "params": []
+  },
+  {
+    "__docId__": 38,
+    "kind": "method",
+    "name": "componentWillUnmount",
+    "memberof": "app/containers/other/Other.js~Other",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/containers/other/Other.js~Other#componentWillUnmount",
+    "access": null,
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 39,
+    "kind": "member",
+    "name": "tick",
+    "memberof": "app/containers/other/Other.js~Other",
+    "static": false,
+    "longname": "app/containers/other/Other.js~Other#tick",
+    "access": null,
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 40,
+    "kind": "method",
+    "name": "render",
+    "memberof": "app/containers/other/Other.js~Other",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "app/containers/other/Other.js~Other#render",
+    "access": null,
+    "description": null,
+    "lineNumber": 31,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 41,
+    "kind": "function",
+    "name": "mapStateToProps",
+    "memberof": "app/containers/other/Other.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "app/containers/other/Other.js~mapStateToProps",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/containers/other/Other.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 39,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"counter\": *, \"timer\": *, \"age\": *, \"multiplier\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 42,
+    "kind": "variable",
+    "name": "other",
+    "memberof": "app/containers/other/Other.js",
+    "static": true,
+    "longname": "app/containers/other/Other.js~other",
+    "access": null,
+    "export": true,
+    "importPath": "aurochs/app/containers/other/Other.js",
+    "importStyle": "other",
+    "description": null,
+    "lineNumber": 49,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 43,
+    "kind": "file",
+    "name": "app/containers/other/Style.js",
+    "content": "import { StyleSheet} from 'react-native';\n\nexport default StyleSheet.create({\n\tview: {\n\t\tjustifyContent: 'space-around',\n\t\tbackgroundColor: '#F99',\n\t\tborderTopWidth: 1,\n\t\tborderTopColor: '#F77',\n\t\t//\tbackgroundColor: '#fad393',\n\t\talignItems: 'center',\n\t\tflexDirection: 'column',\n\t\tflex: 1\n\t},\n\ttext: {\n\t\tcolor: '#FFF',\n\t\twidth: 300,\n\t\tfontSize: 20,\n\t\ttextAlign: 'center'\n\t}\n})",
+    "static": true,
+    "longname": "app/containers/other/Style.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 44,
+    "kind": "file",
+    "name": "app/index.js",
+    "content": "",
+    "static": true,
+    "longname": "app/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 45,
+    "kind": "file",
+    "name": "app/reducers/index.js",
+    "content": "import {combineReducers} from 'redux'\nimport testReducer from './testReducer'\nimport configureStore from '../config/store'\n\nexport default () => {\n\n\tconst rootReducer = combineReducers({\n\t\ttest: testReducer\n\t});\n\treturn configureStore(rootReducer);\n}",
+    "static": true,
+    "longname": "app/reducers/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 46,
+    "kind": "function",
+    "name": "index",
+    "memberof": "app/reducers/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "app/reducers/index.js~index",
+    "access": null,
+    "export": true,
+    "importPath": "aurochs/app/reducers/index.js",
+    "importStyle": "index",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 47,
+    "kind": "file",
+    "name": "app/reducers/testReducer.js",
+    "content": "/**\n * @flow\n */\n\n'use strict';\n\nconst INCREMENT_AGE = 'INCREMENT_AGE';\nconst INCREMENT_COUNTER = 'INCREMENT_COUNTER';\n/**\n * The initial state of the app. \n * @type {{age: number, name: string, counter: number, timer: null, multiplier: number}}\n */\nconst INITIAL_STATE = {\n\tage: 10,\n\tname: 'SEAN',\n\tcounter: 0,\n\ttimer: null,\n\tmultiplier: 1\n}\nexport default (state = INITIAL_STATE, action) => {\n\tlet {age} = action;\n\tswitch (action.type) {\n\t\tcase INCREMENT_AGE:\n\t\t\tage += .001 * state.counter;\n\t\t\treturn {...state, age};\n\t\t\tbreak;\n\t\tcase INCREMENT_COUNTER:\n\t\t\tlet counter = state.counter;\n\t\t\tcounter++;\n\t\t\treturn {...state, counter};\n\t\t\tbreak;\n\t\tdefault:\n\t\t\treturn {...state};\n\t}\n}",
+    "static": true,
+    "longname": "app/reducers/testReducer.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 48,
+    "kind": "variable",
+    "name": "INCREMENT_AGE",
+    "memberof": "app/reducers/testReducer.js",
+    "static": true,
+    "longname": "app/reducers/testReducer.js~INCREMENT_AGE",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/reducers/testReducer.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "INCREMENT_COUNTER",
+    "memberof": "app/reducers/testReducer.js",
+    "static": true,
+    "longname": "app/reducers/testReducer.js~INCREMENT_COUNTER",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/reducers/testReducer.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "variable",
+    "name": "INITIAL_STATE",
+    "memberof": "app/reducers/testReducer.js",
+    "static": true,
+    "longname": "app/reducers/testReducer.js~INITIAL_STATE",
+    "access": null,
+    "export": false,
+    "importPath": "aurochs/app/reducers/testReducer.js",
+    "importStyle": null,
+    "description": "The initial state of the app. ",
+    "lineNumber": 13,
+    "type": {
+      "nullable": null,
+      "types": [
+        "{age: number, name: string, counter: number, timer: null, multiplier: number}"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "function",
+    "name": "testReducer",
+    "memberof": "app/reducers/testReducer.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "app/reducers/testReducer.js~testReducer",
+    "access": null,
+    "export": true,
+    "importPath": "aurochs/app/reducers/testReducer.js",
+    "importStyle": "testReducer",
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "state",
+        "optional": true,
+        "types": [
+          "*"
+        ],
+        "defaultRaw": "INITIAL_STATE",
+        "defaultValue": "INITIAL_STATE"
+      },
+      {
+        "name": "action",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{...state: Object}"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 56,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 58,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 61,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 67,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 68,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 77,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 81,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 82,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 83,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 84,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 85,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 87,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 89,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 91,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 92,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 93,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 94,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 95,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 96,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 97,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 98,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 99,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": "",
+    "lineNumber": 193,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 101,
+    "kind": "external",
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 102,
+    "kind": "external",
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 103,
+    "kind": "external",
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 104,
+    "kind": "external",
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 105,
+    "kind": "external",
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 106,
+    "kind": "external",
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 107,
+    "kind": "external",
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 108,
+    "kind": "external",
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "lineNumber": 34,
+    "builtinExternal": true
+  }
+]

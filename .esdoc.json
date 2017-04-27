@@ -1,0 +1,19 @@
+{
+  "source": "./app",
+  "destination": "./doc",
+  "recurse": true,
+  "access": ["public", "private", "protected"],
+  "autoPrivate": false,
+  "package": "./package.json",
+  "experimentalProposal": {
+    "classProperties": true,
+    "objectRestSpread": true,
+    "decorators": true,
+    "doExpressions": true,
+    "functionBind": true,
+    "asyncGenerators": true,
+    "exportExtensions": true,
+    "dynamicImport": true
+  },
+  "title": "aurochs"
+}
