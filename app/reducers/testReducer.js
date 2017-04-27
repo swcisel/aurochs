@@ -1,11 +1,11 @@
-/**
- * @flow
- */
 
 'use strict';
 
+import {REHYDRATE} from 'redux-persist/constants';
+
 const INCREMENT_AGE = 'INCREMENT_AGE';
 const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
+const RESET_AGE = 'RESET_AGE';
 const INITIAL_STATE = {
 	age: 10,
 	name: 'SEAN',
@@ -18,7 +18,11 @@ export default (state = INITIAL_STATE, action) => {
 	let {age} = action;
 	switch (action.type) {
 		case INCREMENT_AGE:
-			age += .001 * state.counter;
+			age += .001 * Math.pow(Math.log(state.counter+2), 2);
+			return {...state, age};
+			break;
+		case RESET_AGE:
+			age = 10;
 			return {...state, age};
 			break;
 		case INCREMENT_COUNTER:
@@ -26,6 +30,11 @@ export default (state = INITIAL_STATE, action) => {
 			counter++;
 			return {...state, counter};
 			break;
+		case REHYDRATE:
+			var incoming = action.payload.test
+			if (incoming) return {...state, ...incoming}
+			console.log('INCUMING', action);
+			return state
 		default:
 			return {...state};
 	}

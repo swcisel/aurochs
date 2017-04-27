@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
 	Text,
 	View,
-	Animated,
+	Animated
 } from 'react-native';
 import {Button, Draggable} from 'aurochs/app/components';
 import styles from './Style';
@@ -27,18 +27,15 @@ class Main extends Component {
 	constructor(props) {
 		super(props);
 		this.animatedValue = 0;
+		this.starve = (e) => {
+			const age = this.props.age;
+			this.props.dispatch({type: 'RESET_AGE', age});
+		}
 		this.food = (e) => {
-			console.log('food', e);
+			console.log('food', .001 * Math.pow(Math.log(this.props.counter+2), 2));
 			const age = this.props.age;
 			this.props.dispatch({type: 'INCREMENT_AGE', age});
 		}
-		this.bounce = () => {
-			this.animatedValue = 0;
-			Animated.spring(
-				this.animatedValue
-			)
-		}
-		props.dispatch({type: 'INCREMENT_AGE', age: 20});
 	}
 	render () {
 		const growStyle = () => {
@@ -58,7 +55,7 @@ class Main extends Component {
 				<Text style={styles.text}>{Math.round(this.props.age)}</Text>
 				<Text>{this.props.age}</Text>
 				<Draggable />
-				<Button label="nothing"></Button>
+				<Button label="nothing" onPress={(e) => this.starve(e)}></Button>
 				<Button style={styles.button} label="Add" onPress={(e) => this.food(e)} />
 			</View>
 		)

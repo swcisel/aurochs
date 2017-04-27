@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
 	Text,
 	View,
-	TouchableHighlight
+	AsyncStorage
 } from 'react-native';
 import styles from './Style'
 /**
@@ -15,9 +15,6 @@ class Other extends Component {
 		counter: 0
 	}
 
-	/**
-	 *
-	 */
 	componentWillMount() {
 		let timer = setInterval(this.tick, 1000);
 		this.setState({timer});
