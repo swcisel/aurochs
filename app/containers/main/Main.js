@@ -6,6 +6,7 @@ import {
 	Animated
 } from 'react-native';
 import {Button, Draggable} from 'aurochs/app/components';
+import KeepAwake from 'react-native-keep-awake';
 import styles from './Style';
 
 const SPRING_CONFIG = {tension: 2, friction: 3};
@@ -27,6 +28,7 @@ class Main extends Component {
 	constructor(props) {
 		super(props);
 		this.animatedValue = 0;
+		KeepAwake.activate();
 		this.starve = (e) => {
 			const age = this.props.age;
 			this.props.dispatch({type: 'RESET_AGE', age});
@@ -36,6 +38,14 @@ class Main extends Component {
 			const age = this.props.age;
 			this.props.dispatch({type: 'INCREMENT_AGE', age});
 		}
+		this.changeKeepAwake = (shouldBeAwake) => {
+			if (shouldBeAwake) {
+				KeepAwake.activate();
+			} else {
+				KeepAwake.deactivate();
+			}
+		}
+
 	}
 	render () {
 		const growStyle = () => {
