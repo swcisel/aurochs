@@ -8,10 +8,8 @@ import {
 	TextInput,
 	Slider,
 	Picker,
-	Modal,
 	SegmentedControlIOS,
 	ActivityIndicator,
-	TouchableHighlight
 } from 'react-native'
 import styles from './Style';
 

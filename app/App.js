@@ -5,7 +5,6 @@ import {
 	View
 } from 'react-native';
 import { Provider } from 'react-redux';
-import Icon from "react-native-vector-icons/FontAwesome"
 import createStore from './reducers';
 import Other from './containers/other/Other';
 import Nav from './routes';

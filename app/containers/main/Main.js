@@ -4,6 +4,7 @@ import {
 	Text,
 	View,
 } from 'react-native';
+import Icon from "react-native-vector-icons/FontAwesome"
 import {Button, Draggable} from 'aurochs/app/components';
 import KeepAwake from 'react-native-keep-awake';
 import styles from './Style';
@@ -26,7 +27,9 @@ class Main extends Component {
 
 	constructor(props) {
 		super(props);
-		KeepAwake.activate();
+		if (props.keepAwake === true) {
+			KeepAwake.activate();
+		}
 		this.starve = (e) => {
 			const age = this.props.age;
 			this.props.dispatch({type: 'RESET_AGE', age});
@@ -36,14 +39,6 @@ class Main extends Component {
 			const age = this.props.age;
 			this.props.dispatch({type: 'INCREMENT_AGE', age});
 		}
-		this.changeKeepAwake = (shouldBeAwake) => {
-			if (shouldBeAwake) {
-				KeepAwake.activate();
-			} else {
-				KeepAwake.deactivate();
-			}
-		}
-
 	}
 	render () {
 		const { navigate } = this.props.navigation;
@@ -71,7 +66,8 @@ class Main extends Component {
 					<Button label="nothing" onPress={(e) => this.starve(e)}></Button>
 					<Button style={styles.button} label="Add" onPress={(e) => this.food(e)} />
 				</View>
-				<Button style={styles.settingsButton} label="Settings" onPress={() => navigate('Settings')} title="bubu" />
+				<View style={styles.settingsButton}><Icon.Button name="gear" size={25} color='#F99' backgroundColor='transparent' iconStyle={{padding: 'auto', margin: 'auto'}} onPress={() => navigate('Settings')} title="bubu" />
+				</View>
 				<View style={growStyle()}></View>
 			</View>
 		)

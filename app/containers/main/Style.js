@@ -23,12 +23,14 @@ export default StyleSheet.create({
 		backgroundColor: 'red'
 	},
 	settingsButton: {
+		alignItems: 'center',
+		justifyContent: 'space-around',
 		position: 'absolute',
-		borderWidth: 0,
 		top: 0,
 		right: 0,
-		width: 'auto',
-		height: 'auto'
+		padding: 0,
+		marginTop: 15,
+		borderWidth: 0,
 	},
 	bottomBar: {
 		flexDirection: 'row'
