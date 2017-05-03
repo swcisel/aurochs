@@ -20,7 +20,7 @@ class Other extends Component {
 		this.setState({timer});
 	}
 	componentWillUnmount() {
-		this.clearInterval(this.state.timer);
+		clearInterval(this.state.timer);
 	}
 	tick = () => {
 		this.props.dispatch({type: 'INCREMENT_COUNTER'});

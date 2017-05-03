@@ -16,6 +16,7 @@ export default StyleSheet.create({
 	circle: {
 		borderRadius: 50,
 		backgroundColor: 'white',
+		opacity: .6,
 		width: 50,
 		height: 50,
 		margin: 75

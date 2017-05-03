@@ -9,10 +9,13 @@
   "dependencies": {
     "flow": "^0.2.3",
     "flow-bin": "^0.44.2",
+    "pretty-format": "^19.0.0",
     "react": "16.0.0-alpha.6",
-    "react-native": "0.43.4",
+    "react-native": "0.44.0",
     "react-native-keep-awake": "^2.0.4",
     "react-native-linear-gradient": "^2.0.0",
+    "react-native-vector-icons": "^4.0.1",
+    "react-navigation": "^1.0.0-beta.9",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
     "redux-persist": "^4.6.0"
@@ -21,7 +24,6 @@
     "babel-jest": "19.0.0",
     "babel-preset-react-native": "1.9.1",
     "esdoc": "^0.5.2",
-    "eslint": "^3.19.0",
     "eslint-config-react-native": "^1.6.0",
     "jest": "19.0.2",
     "react-test-renderer": "16.0.0-alpha.6"

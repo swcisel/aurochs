@@ -1,9 +1,8 @@
-import React, { Component, PropTypes} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
 	Text,
 	View,
-	Animated
 } from 'react-native';
 import {Button, Draggable} from 'aurochs/app/components';
 import KeepAwake from 'react-native-keep-awake';
@@ -20,14 +19,13 @@ class Main extends Component {
 	 * @param me
 	 * @param store
 	 */
-	static propTypes = {
-		age: PropTypes.number,
-		counter: PropTypes.number,
-		dispatch: PropTypes.func
+	static navigationOptions = {
+		title: 'Main',
+		header: null
 	}
+
 	constructor(props) {
 		super(props);
-		this.animatedValue = 0;
 		KeepAwake.activate();
 		this.starve = (e) => {
 			const age = this.props.age;
@@ -48,25 +46,33 @@ class Main extends Component {
 
 	}
 	render () {
+		const { navigate } = this.props.navigation;
 		const growStyle = () => {
 			const a = this.props.age;
 			const b = ("#" + ('000000' + this.props.counter.toString(16)).substr(-6, 6)).toString();
+			const o = 1 - ((a-30)/100);
 			return {
 				height: a,
 				width: a,
 				borderRadius: a,
-				backgroundColor: b
+				backgroundColor: b,
+				position: 'absolute',
+				// opacity: o,
+				top: 70
 			}
 		}
 		return (
 			<View style={styles.view}>
-				<View style={growStyle()}></View>
 				<Text style={{fontSize: 20}}>{("#" + ('000000' + this.props.counter.toString(16)).substr(-6, 6)).toString()}</Text>
 				<Text style={styles.text}>{Math.round(this.props.age)}</Text>
 				<Text>{this.props.age}</Text>
 				<Draggable />
-				<Button label="nothing" onPress={(e) => this.starve(e)}></Button>
-				<Button style={styles.button} label="Add" onPress={(e) => this.food(e)} />
+				<View style={styles.bottomBar}>
+					<Button label="nothing" onPress={(e) => this.starve(e)}></Button>
+					<Button style={styles.button} label="Add" onPress={(e) => this.food(e)} />
+				</View>
+				<Button style={styles.settingsButton} label="Settings" onPress={() => navigate('Settings')} title="bubu" />
+				<View style={growStyle()}></View>
 			</View>
 		)
 	}

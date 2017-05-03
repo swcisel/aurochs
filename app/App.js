@@ -2,14 +2,13 @@
 import React, { Component } from 'react';
 import {
 	StyleSheet,
-	View,
-	AsyncStorage
+	View
 } from 'react-native';
-import {persistStore} from 'redux-persist';
 import { Provider } from 'react-redux';
+import Icon from "react-native-vector-icons/FontAwesome"
 import createStore from './reducers';
-import Main from './containers/main/Main';
 import Other from './containers/other/Other';
+import Nav from './routes';
 import {Button} from 'aurochs/app/components'
 const store = createStore();
 
@@ -22,30 +21,24 @@ export default class aurochs extends Component {
 	 */
 	constructor() {
 		super();
-		// this.buub = async (e) => {
-		// 	try {
-		// 		const value = await AsyncStorage.getItem('reduxPersist:test');
-		// 		if (value !== null){
-		// 			// We have data!!
-		// 			console.log(value);
-		// 		}
-		// 		else {
-		// 			console.log('now');
-		// 		}
-		// 	} catch (error) {
-		// 		console.log('WAH!', error);
-		// 		// Error retrieving data
-		// 	}
-		// 	persistStore(store, {storage: AsyncStorage});
-		// }
+		this.renderScene = (route, navigator) => {
+			<View style={{ flex: 1 }}>
+				{route.title}
+			</View>
+		}
 	}
 	render() {
 		console.log('STORE', store);
 		return (
 			<Provider store={store}>
 				<View style={{flex: 1}}>
-					<Main></Main>
-					<Other></Other>
+					<Nav style={{flex: 15}}>
+
+					</Nav>
+					{/*<Form />*/}
+					{/*<Main />*/}
+					<Other style={{flex: 1}} />
+					{/*<View style={{width: 'auto', position: 'absolute', right: 0, top: 25, height: 'auto', zIndex: 100}}><Icon.Button backgroundColor="transparent" color="red" size={20} name="gear" /></View>*/}
 				</View>
 			</Provider>
 		);

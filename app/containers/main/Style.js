@@ -3,8 +3,9 @@ import { StyleSheet} from 'react-native';
 export default StyleSheet.create({
 	view: {
 		justifyContent: 'space-around',
-		backgroundColor: '#FDDA99',
-	//	backgroundColor: '#fad393',
+		// backgroundColor: '#FDDA99',
+		// backgroundColor: '#00F0D0',
+		backgroundColor: '#00FECE',
 		alignItems: 'center',
 		flexDirection: 'column',
 		flex: 10
@@ -12,7 +13,7 @@ export default StyleSheet.create({
 	text: {
 		margin: 10,
 		fontSize: 60,
-		color: '#6d6',
+		color: '#FCF',
 		textAlign: 'center'
 	},
 	circle: {
@@ -20,5 +21,16 @@ export default StyleSheet.create({
 		width: 100,
 		borderRadius: 100,
 		backgroundColor: 'red'
+	},
+	settingsButton: {
+		position: 'absolute',
+		borderWidth: 0,
+		top: 0,
+		right: 0,
+		width: 'auto',
+		height: 'auto'
+	},
+	bottomBar: {
+		flexDirection: 'row'
 	}
 })

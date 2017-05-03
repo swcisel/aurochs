@@ -4,7 +4,7 @@ export default StyleSheet.create({
 	view: {
 		justifyContent: 'space-around',
 		backgroundColor: '#F99',
-		borderTopWidth: 1,
+		borderTopWidth: StyleSheet.hairlineWidth,
 		borderTopColor: '#F77',
 		//	backgroundColor: '#fad393',
 		alignItems: 'center',
