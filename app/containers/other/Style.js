@@ -7,7 +7,7 @@ export default StyleSheet.create({
 	},
 	view: {
 		justifyContent: 'space-around',
-		backgroundColor: '#F99',
+		backgroundColor: '#6E108E',
 		borderTopWidth: StyleSheet.hairlineWidth,
 		borderTopColor: '#F77',
 		//	backgroundColor: '#fad393',

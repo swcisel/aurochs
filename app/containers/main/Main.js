@@ -7,7 +7,8 @@ import {
 	ProgressViewIOS,
 	ProgressBarAndroid
 } from 'react-native';
-import Icon from "react-native-vector-icons/FontAwesome"
+import Icon from "react-native-vector-icons/FontAwesome";
+import LinearGradient from 'react-native-linear-gradient';
 import {Button, Draggable} from 'aurochs/app/components';
 import KeepAwake from 'react-native-keep-awake';
 import styles from './Style';
@@ -86,15 +87,16 @@ class Main extends Component {
 		}
 		return (
 			<View style={styles.view}>
+				<LinearGradient colors={['#6E108E', 'transparent', 'transparent', '#6E108E']} start={{x:.5, y:.01}} style={[styles.view, styles.gradient]}>
 				<View style={growStyle()}>
 					<Text style={[styles.text]}>{Math.round(this.props.age)}</Text>
 				</View>
-				<Text style={{fontSize: 20, marginTop: 15}}>{("#" + ('000000' + this.props.counter.toString(16)).substr(-6, 6)).toString()}</Text>
-				<Text>{this.props.age}</Text>
+				<Text style={{fontSize: 20, marginTop: 15, backgroundColor: 'transparent'}}>{("#" + ('000000' + this.props.counter.toString(16)).substr(-6, 6)).toString()}</Text>
+				<Text style={{ backgroundColor: 'transparent' }}>{this.props.age}</Text>
 				<Draggable />
-				<View style={{width: '80%', backgroundColor: '#DDFF00'}}>
+				<View style={{width: '80%', backgroundColor: '#DDFF00', borderRadius: 3}}>
 					<ProgressViewIOS progress={this.state.progress} progressTintColor='red' style={{height: 20 }} />
-					<Button label={"Buy Grower         " + this.props.growerCost.toString()} onPress={(e) => this.buyGrower()}></Button>
+					<Button label={"Buy Grower:        " + this.props.growerCost.toString()} onPress={(e) => this.buyGrower()}></Button>
 				</View>
 				<TouchableHighlight style={[styles.button, styles.circle]}
 				                    onPress={(e) => this.food(e)}
@@ -102,11 +104,12 @@ class Main extends Component {
 				>
 					<Text></Text>{/*<Text style={{fontSize: 20, color: '#FACCE0', fontWeight: 'bold'}}>ADD</Text>*/}
 				</TouchableHighlight>
-				<View style={styles.bottomBar}>
-					<Button label="nothing" onPress={(e) => this.starve(e)}></Button>
-				</View>
+				{/*<View style={styles.bottomBar}>*/}
+					{/*<Button label="nothing" onPress={(e) => this.starve(e)}></Button>*/}
+				{/*</View>*/}
 				<View style={styles.settingsButton}><Icon.Button name="gear" size={25} color='#F99' backgroundColor='transparent' iconStyle={{padding: 'auto', margin: 'auto'}} onPress={() => navigate('Settings')} title="bubu" />
 				</View>
+				</LinearGradient>
 			</View>
 		)
 	}

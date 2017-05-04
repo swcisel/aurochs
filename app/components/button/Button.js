@@ -16,16 +16,17 @@ class Button extends Component {
 	render() {
 		return (
 			<View style={this.props.style}>
-				<LinearGradient colors={['#FDD', '#FCC']} start={{x:.4, y:.1}} style={styles.linearGradient}>
+				{/*<LinearGradient colors={['#FDD', '#FCC']} start={{x:.4, y:.1}} style={styles.linearGradient}>*/}
 					<TouchableHighlight
 						style={[styles.button, this.props.style]}
 						onPress={this.props.onPress}
-						underlayColor="#FCC"
+						underlayColor='#9E108E'
+						// underlayColor="#FCC"
 					>
 						<Text style={styles.label}>{this.props.label.toUpperCase()}</Text>
 					</TouchableHighlight>
 					<ActivityIndicator animating={false} style={styles.activity}></ActivityIndicator>
-				</LinearGradient>
+				{/*</LinearGradient>*/}
 			</View>
 		)
 	}

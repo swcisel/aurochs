@@ -7,10 +7,10 @@ export default StyleSheet.create({
 		borderWidth: 0,
 		padding: 0,
 		alignItems: 'center',
-		borderRadius: 5,
+		borderRadius: 5
 	},
 	label: {
-		color: '#CA90F0',
+		color: '#FAA0F0',
 		fontWeight: 'bold',
 		fontSize: 15,
 		textAlign: 'center',
@@ -22,10 +22,8 @@ export default StyleSheet.create({
 	},
 	button: {
 		justifyContent: 'center',
-		borderWidth: StyleSheet.hairlineWidth,
-		borderColor: 'pink',
 		alignItems: 'center',
-		borderRadius: 5,
+		backgroundColor: '#9E108E',
 		padding: 10
 	},
 	linearGradient: {

@@ -16,7 +16,11 @@ export default StyleSheet.create({
 		padding: 0,
 		alignItems: 'center',
 		borderRadius: 5,
-		backgroundColor: '#9E108E'
+		backgroundColor: '#9E108E',
+		borderWidth: 0,
+		shadowColor: 'black',
+		shadowOffset: {width: 1, height: 5},
+		shadowOpacity: .5
 	},
 	text: {
 		fontSize: 60,
@@ -43,5 +47,13 @@ export default StyleSheet.create({
 	},
 	bottomBar: {
 		flexDirection: 'row'
+	},
+	gradient: {
+		width: '100%',
+		height: '100%'
 	}
+	// linearGradient: {
+	// 	width: '100%',
+	// 	height: '100%'
+	// }
 })
