@@ -15,10 +15,14 @@ export default StyleSheet.create({
 	},
 	circle: {
 		borderRadius: 50,
-		backgroundColor: 'white',
-		opacity: .6,
+		backgroundColor: 'transparent',
+		opacity: 1,
 		width: 50,
 		height: 50,
-		margin: 75
+		margin: 75,
+	},
+	image: {
+		width: '100%',
+		height: '100%'
 	}
 })

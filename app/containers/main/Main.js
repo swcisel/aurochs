@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import {
 	Text,
 	View,
+	TouchableHighlight,
+	ProgressViewIOS,
+	ProgressBarAndroid
 } from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome"
 import {Button, Draggable} from 'aurochs/app/components';
@@ -24,7 +27,21 @@ class Main extends Component {
 		title: 'Main',
 		header: null
 	}
-
+	state = {
+		progress: 0
+	}
+	componentDidMount(){
+		this.setState({progress: 0});
+		setInterval( () => {
+			const {age, growers, laps} = this.props;
+			var progress = (this.state.progress + (0.001 * growers)) % 1;
+			if (progress >= (1 - (0.001 * growers))) {
+				console.log('laplap', progress, (1-(0.001 * growers)));
+				this.props.dispatch({type: 'INCREMENT_LAPS', laps: laps});
+				this.props.dispatch({type: 'INCREMENT_AGE', age: age});
+			}
+			this.setState({progress: progress}); }, 50 );
+	}
 	constructor(props) {
 		super(props);
 		if (props.keepAwake === true) {
@@ -35,9 +52,17 @@ class Main extends Component {
 			this.props.dispatch({type: 'RESET_AGE', age});
 		}
 		this.food = (e) => {
-			console.log('food', .001 * Math.pow(Math.log(this.props.counter+2), 2));
-			const age = this.props.age;
+			console.log('food', .001 * Math.pow(Math.log(this.props.taps) + Math.log(this.props.counter+2), 2));
+			const {age, taps, counter} = this.props
+			this.props.dispatch({type: 'INCREMENT_TAPS', taps});
 			this.props.dispatch({type: 'INCREMENT_AGE', age});
+		}
+		this.buyGrower = () => {
+			const {age, growers, growerCost} = this.props;
+			if (age > growerCost) {
+				console.log('buyGrower');
+				this.props.dispatch ({type: 'BUY_GROWER', age, growers, growerCost});
+			}
 		}
 	}
 	render () {
@@ -47,28 +72,41 @@ class Main extends Component {
 			const b = ("#" + ('000000' + this.props.counter.toString(16)).substr(-6, 6)).toString();
 			const o = 1 - ((a-30)/100);
 			return {
-				height: a,
-				width: a,
-				borderRadius: a,
+				width: '100%',
+				height: 'auto',
 				backgroundColor: b,
-				position: 'absolute',
+				marginTop: 50,
+				shadowColor: 'black',
+				borderTopWidth: 1,
+				shadowOffset: {width: 1, height: 5},
+				shadowOpacity: .5
+				//right: 40,
 				// opacity: o,
-				top: 70
 			}
 		}
 		return (
 			<View style={styles.view}>
-				<Text style={{fontSize: 20}}>{("#" + ('000000' + this.props.counter.toString(16)).substr(-6, 6)).toString()}</Text>
-				<Text style={styles.text}>{Math.round(this.props.age)}</Text>
+				<View style={growStyle()}>
+					<Text style={[styles.text]}>{Math.round(this.props.age)}</Text>
+				</View>
+				<Text style={{fontSize: 20, marginTop: 15}}>{("#" + ('000000' + this.props.counter.toString(16)).substr(-6, 6)).toString()}</Text>
 				<Text>{this.props.age}</Text>
 				<Draggable />
+				<View style={{width: '80%', backgroundColor: '#DDFF00'}}>
+					<ProgressViewIOS progress={this.state.progress} progressTintColor='red' style={{height: 20 }} />
+					<Button label={"Buy Grower         " + this.props.growerCost.toString()} onPress={(e) => this.buyGrower()}></Button>
+				</View>
+				<TouchableHighlight style={[styles.button, styles.circle]}
+				                    onPress={(e) => this.food(e)}
+				                    underlayColor="#7E108E"
+				>
+					<Text></Text>{/*<Text style={{fontSize: 20, color: '#FACCE0', fontWeight: 'bold'}}>ADD</Text>*/}
+				</TouchableHighlight>
 				<View style={styles.bottomBar}>
 					<Button label="nothing" onPress={(e) => this.starve(e)}></Button>
-					<Button style={styles.button} label="Add" onPress={(e) => this.food(e)} />
 				</View>
 				<View style={styles.settingsButton}><Icon.Button name="gear" size={25} color='#F99' backgroundColor='transparent' iconStyle={{padding: 'auto', margin: 'auto'}} onPress={() => navigate('Settings')} title="bubu" />
 				</View>
-				<View style={growStyle()}></View>
 			</View>
 		)
 	}
@@ -76,12 +114,18 @@ class Main extends Component {
 
 const mapStateToProps = (state) => {
 	"use strict";
-	const {counter, timer, age, multiplier} = state.test;
+	const {counter, timer, age, multiplier, taps, laps, growers, growerCost} = state.test;
+	const progress = state.progress
 	return {
 		counter,
 		timer,
 		age,
-		multiplier
+		multiplier,
+		taps,
+		laps,
+		growers,
+		growerCost,
+		progress
 	}
 }
 export default connect(mapStateToProps)(Main)

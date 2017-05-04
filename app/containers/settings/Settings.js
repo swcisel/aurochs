@@ -30,8 +30,17 @@ class Settings extends Component {
 			this.props.dispatch({type: 'TOGGLE_KEEPAWAKE', keepAwake});
 		}
 		return (
-			<View>
-				<Text>Keep awake</Text>
+			<View style={{
+				flexDirection: 'row',
+				alignItems: 'center',
+				justifyContent: 'center',
+				marginTop: 20,
+				borderTopWidth: 1,
+				borderBottomWidth: 1,
+				borderColor: 'gray',
+				padding: 5
+			}}>
+				<Text style={{fontSize: 20, textAlignVertical: 'center', marginRight: 20}}>Keep awake</Text>
 				<Switch value={this.props.keepAwake} onValueChange={swoky}></Switch>
 			</View>
 		)

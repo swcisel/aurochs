@@ -7,6 +7,7 @@ import {
 	StyleSheet,
 	View,
 	Text,
+	Image,
 	PanResponder,
 	Animated,
 	Dimensions
@@ -41,6 +42,7 @@ class Draggable extends Component {
 					style={[this.state.pan.getLayout(), styles.circle]}
 					{...this.panResponder.panHandlers}
 				>
+					<Image style={styles.image} source={require('../../resources/img/Hypnotoad3.png')}></Image>
 				</Animated.View>
 			</View>
 		)

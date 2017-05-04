@@ -10,17 +10,26 @@ export default StyleSheet.create({
 		flexDirection: 'column',
 		flex: 10
 	},
+	button: {
+		backgroundColor: 'transparent',
+		justifyContent: 'center',
+		padding: 0,
+		alignItems: 'center',
+		borderRadius: 5,
+		backgroundColor: '#9E108E'
+	},
 	text: {
-		margin: 10,
 		fontSize: 60,
+		backgroundColor: 'transparent',
 		color: '#FCF',
-		textAlign: 'center'
+		textAlign: 'center',
+		height: 'auto',
+		textAlignVertical: 'center'
 	},
 	circle: {
 		height: 100,
 		width: 100,
-		borderRadius: 100,
-		backgroundColor: 'red'
+		borderRadius: 100
 	},
 	settingsButton: {
 		alignItems: 'center',

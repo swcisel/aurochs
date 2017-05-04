@@ -18,7 +18,7 @@ class Button extends Component {
 			<View style={this.props.style}>
 				<LinearGradient colors={['#FDD', '#FCC']} start={{x:.4, y:.1}} style={styles.linearGradient}>
 					<TouchableHighlight
-						style={StyleSheet.flatten([styles.button, this.props.style])}
+						style={[styles.button, this.props.style]}
 						onPress={this.props.onPress}
 						underlayColor="#FCC"
 					>

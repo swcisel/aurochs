@@ -27,20 +27,30 @@ class Other extends Component {
 	}
 	render () {
 		return (
-			<View style={styles.view}>
-				<Text style={styles.text}>Counter: {this.props.counter}</Text>
+			<View style={styles.mainView}>
+				<View style={styles.view}>
+					<Text style={styles.text}>Counter: {this.props.counter}</Text>
+					<Text style={styles.text}>Taps: {this.props.taps}</Text>
+					<Text style={styles.text}>Laps: {this.props.laps}</Text>
+				</View>
+				<View style={styles.view}>
+					<Text style={styles.text}>Growers: {this.props.growers}</Text>
+				</View>
 			</View>
 		)
 	}
 }
 const mapStateToProps = (state) => {
 	"use strict";
-	const {age, counter, timer, multiplier} = state.test;
+	const {age, counter, timer, multiplier, taps, laps, growers} = state.test;
 	return {
 		counter,
 		timer,
 		age,
-		multiplier
+		multiplier,
+		taps,
+		laps,
+		growers
 	}
 }
 const other = connect(mapStateToProps)(Other);

@@ -1,6 +1,10 @@
 import { StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+	mainView: {
+		flex: 1,
+		flexDirection: 'column'
+	},
 	view: {
 		justifyContent: 'space-around',
 		backgroundColor: '#F99',
@@ -8,13 +12,13 @@ export default StyleSheet.create({
 		borderTopColor: '#F77',
 		//	backgroundColor: '#fad393',
 		alignItems: 'center',
-		flexDirection: 'column',
+		flexDirection: 'row',
 		flex: 1
 	},
 	text: {
 		color: '#FFF',
-		width: 300,
-		fontSize: 20,
+		width: 'auto',
+		fontSize: 15,
 		textAlign: 'center'
 	}
 })

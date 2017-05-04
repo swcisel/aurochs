@@ -6,14 +6,13 @@ export default StyleSheet.create({
 		justifyContent: 'center',
 		borderWidth: 0,
 		padding: 0,
-		borderColor: 'pink',
 		alignItems: 'center',
 		borderRadius: 5,
 	},
 	label: {
 		color: '#CA90F0',
 		fontWeight: 'bold',
-		fontSize: 20,
+		fontSize: 15,
 		textAlign: 'center',
 	},
 	activity: {
@@ -27,7 +26,7 @@ export default StyleSheet.create({
 		borderColor: 'pink',
 		alignItems: 'center',
 		borderRadius: 5,
-		padding: 20
+		padding: 10
 	},
 	linearGradient: {
 		borderRadius: 5
